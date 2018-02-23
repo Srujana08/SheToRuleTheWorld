@@ -25,6 +25,7 @@ public class EduOrEnt extends AppCompatActivity {
         setSupportActionBar(toolbar);
         ImageButton edu = (ImageButton)findViewById(R.id.education);
         ImageButton ent  = (ImageButton)findViewById(R.id.entrepreneurship);
+        final Intent i = new Intent(this, Entrepreneurship.class);
         edu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,7 +35,7 @@ public class EduOrEnt extends AppCompatActivity {
         ent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(i);
             }
         });
 

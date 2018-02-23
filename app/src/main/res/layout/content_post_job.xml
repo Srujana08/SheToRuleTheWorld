@@ -10,7 +10,23 @@
     tools:showIn="@layout/activity_post_job">
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/jobrole"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <Spinner
+        android:id="@+id/salary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Spinner
+        android:id="@+id/location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/Btnsend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SEND NOTIFICATION" />
 </LinearLayout>

@@ -5,4 +5,57 @@
     <string name="title_activity_edu_or_ent">EduOrEnt</string>
     <string name="title_activity_teach">Teach</string>
     <string name="title_activity_post_job">PostJob</string>
+
+    <string-array name="jobrole">
+        <item>Tailoring</item>
+        <item>Quilling</item>
+        <item>Stitching</item>
+        <item>Bangle Making</item>
+    </string-array>
+
+    <string-array name="salary">
+        <item>Less than 1000</item>
+        <item>1000 - 5000</item>
+        <item>5000 - 10000</item>
+        <item>10000 - 15000</item>
+        <item>15000 - 20000</item>
+        <item>Above 20000</item>
+    </string-array>
+
+    <string-array name="location">
+        <item>Hyderabad</item>
+        <item>Bangalore</item>
+        <item>Chennai</item>
+        <item>Delhi</item>
+    </string-array>
+
+    <string-array name="subject">
+        <item>Maths</item>
+        <item>Science</item>
+        <item>English</item>
+    </string-array>
+
+    <string-array name="std">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string-array name="teachingmode">
+        <item>Skype</item>
+        <item>Youtube</item>
+    </string-array>
+    <string name="title_activity_entrepreneurship">Entrepreneurship</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
 </resources>
