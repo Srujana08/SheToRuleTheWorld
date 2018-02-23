@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.iwh.shetoruletheworld.Signup" >
+
+    <item android:id="@+id/logout"
+        android:title="Logout"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/teach"
+        android:title="Teach"
+        android:orderInCategory="101"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/postjob"
+        android:title="Post Job"
+        android:orderInCategory="102"
+        app:showAsAction="never"/>
+
+
+</menu>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SHE - To Rule The World</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_edu_or_ent">EduOrEnt</string>
+    <string name="title_activity_teach">Teach</string>
+    <string name="title_activity_post_job">PostJob</string>
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.iwh.shetoruletheworld.EduOrEnt"
+    tools:showIn="@layout/activity_edu_or_ent">
+
+    <ImageButton
+        android:id="@+id/education"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/edutext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="EDUCATION" />
+
+    <ImageButton
+        android:id="@+id/entrepreneurship"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/enttext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ENTREPRENEURSHIP" />
+</LinearLayout>
