@@ -1,13 +1,35 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.iwh.shetoruletheworld.Skill">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
+
+    <ImageButton
+        android:id="@+id/quilling"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:contentDescription="Quilling"
+        android:src="@mipmap/ic_launcher" />
+
+    <ImageButton
+        android:id="@+id/banglemaking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+
+        android:contentDescription="Bangle Making"
+        android:src="@mipmap/ic_launcher" />
+
+
+    <ImageButton
+        android:id="@+id/tailoring"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Tailoring"
+        android:src="@mipmap/ic_launcher" />
 </FrameLayout>

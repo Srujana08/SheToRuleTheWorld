@@ -17,9 +17,17 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.iwh.shetoruletheworld.apiControllers.PostJobAPI;
+import com.iwh.shetoruletheworld.apiControllers.SignupAPI;
+
+import static com.iwh.shetoruletheworld.Constants.SUCCESSFULLY_REGISTERED;
+import static com.iwh.shetoruletheworld.Constants.USER_ALREADY_EXISTS;
 import static com.iwh.shetoruletheworld.Constants.flag;
 
 public class PostJob extends AppCompatActivity {
+    String jrole, sal, loc, phone;
+    SharedPreferences sharedpreferences;
+    public static final String MyPREFERENCES = "MyPrefs" ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +35,12 @@ public class PostJob extends AppCompatActivity {
         setContentView(R.layout.activity_post_job);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        Spinner jobrole = (Spinner)findViewById(R.id.jobrole);
-        Spinner salary = (Spinner)findViewById(R.id.salary);
-        Spinner location= (Spinner)findViewById(R.id.location);
+
+        sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+
+        final Spinner jobrole = (Spinner)findViewById(R.id.jobrole);
+        final Spinner salary = (Spinner)findViewById(R.id.salary);
+        final Spinner location= (Spinner)findViewById(R.id.location);
         Button Btnsend = (Button)findViewById(R.id.Btnsend);
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this, R.array.jobrole, android.R.layout.simple_spinner_item);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -38,18 +49,19 @@ public class PostJob extends AppCompatActivity {
         jobrole.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //String id = jobrole.get(position).getId();
+                jrole = jobrole.getItemAtPosition(i).toString();
             }
         });
 
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.salary, android.R.layout.simple_spinner_item);
-        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         salary.setAdapter(adapter2);
 
         salary.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 //String id = salary.get(position).getId();
+                sal = salary.getItemAtPosition(i).toString();
             }
         });
 
@@ -60,13 +72,31 @@ public class PostJob extends AppCompatActivity {
         location.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //String id = location.get(position).getId();
+            loc = location.getItemAtPosition(i).toString();
             }
         });
 
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        editor.putString("JobRole", jrole);
+        editor.putString("Salary", sal);
+        editor.putString("Location", loc);
+        editor.commit();
+
+        SharedPreferences sp = getSharedPreferences(Login.MyPREFERENCES, Context.MODE_PRIVATE);
+        phone = sp.getString("phone","");
         Btnsend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                PostJobAPI postJobAPI = new PostJobAPI();
+                postJobAPI.phone = phone;
+                postJobAPI.jobrole = jrole;
+                postJobAPI.salary = sal;
+                postJobAPI.location = loc;
+                postJobAPI.doCall();
+                String apiResponse = postJobAPI.response;
+                if (apiResponse.equals("Notification sent..")) {
+                    Toast.makeText(PostJob.super.getApplicationContext(), "Notification sent", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });

@@ -71,7 +71,23 @@
         <activity
             android:name=".Entrepreneurship"
             android:label="@string/title_activity_entrepreneurship"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="com.iwh.shetoruletheworld.Entrepreneurship" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Tailoring"
+            android:label="@string/title_activity_tailoring"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="com.iwh.shetoruletheworld.Tailoring" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

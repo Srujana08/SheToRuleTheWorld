@@ -7,46 +7,46 @@
     <string name="title_activity_post_job">PostJob</string>
 
     <string-array name="jobrole">
-        <item>Tailoring</item>
-        <item>Quilling</item>
-        <item>Stitching</item>
-        <item>Bangle Making</item>
+        <item id = "Tailoring">Tailoring</item>
+        <item id = "Quilling">Quilling</item>
+        <item id = "Stitching">Stitching</item>
+        <item id = "Bangle Making">Bangle Making</item>
     </string-array>
 
     <string-array name="salary">
-        <item>Less than 1000</item>
-        <item>1000 - 5000</item>
-        <item>5000 - 10000</item>
-        <item>10000 - 15000</item>
-        <item>15000 - 20000</item>
-        <item>Above 20000</item>
+        <item id = "1">Less than 1000</item>
+        <item id = "2">1000 - 5000</item>
+        <item id = "3">5000 - 10000</item>
+        <item id = "4">10000 - 15000</item>
+        <item id = "5">15000 - 20000</item>
+        <item id = "6">Above 20000</item>
     </string-array>
 
     <string-array name="location">
-        <item>Hyderabad</item>
-        <item>Bangalore</item>
-        <item>Chennai</item>
-        <item>Delhi</item>
+        <item id = "Hyderabad">Hyderabad</item>
+        <item id = "Bangalore">Bangalore</item>
+        <item id = "Chennai">Chennai</item>
+        <item id = "Delhi">Delhi</item>
     </string-array>
 
     <string-array name="subject">
-        <item>Maths</item>
-        <item>Science</item>
-        <item>English</item>
+        <item id = "Maths">Maths</item>
+        <item id = "Science">Science</item>
+        <item id = "English">English</item>
     </string-array>
 
     <string-array name="std">
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
+        <item id = "5">5</item>
+        <item id = "6">6</item>
+        <item id = "7">7</item>
+        <item id = "8">8</item>
+        <item id = "9">9</item>
+        <item id = "10">10</item>
     </string-array>
 
     <string-array name="teachingmode">
-        <item>Skype</item>
-        <item>Youtube</item>
+        <item id = "Skype">Skype</item>
+        <item id = "Youtube">Youtube</item>
     </string-array>
     <string name="title_activity_entrepreneurship">Entrepreneurship</string>
     <string name="section_format">Hello World from section: %1$d</string>
@@ -56,6 +56,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_tailoring">Tailoring</string>
 
 
 </resources>

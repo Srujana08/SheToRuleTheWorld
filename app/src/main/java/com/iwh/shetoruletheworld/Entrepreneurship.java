@@ -3,6 +3,7 @@ package com.iwh.shetoruletheworld;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,12 +21,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import static com.iwh.shetoruletheworld.Constants.flag;
 
-public class Entrepreneurship extends AppCompatActivity {
+public class Entrepreneurship extends AppCompatActivity implements Skill.OnFragmentInteractionListener, EntNotification.OnFragmentInteractionListener {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -95,6 +97,11 @@ public class Entrepreneurship extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
+
     /**
      * A placeholder fragment containing a simple view.
      */
@@ -125,6 +132,9 @@ public class Entrepreneurship extends AppCompatActivity {
                                  Bundle savedInstanceState) {
             //TextView textView = (TextView) rootView.findViewById(R.id.section_label);
             //textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+
+            //ImageButton not1 = (ImageButton)getView().findViewById(R.id.not1);
+
             return inflater.inflate(R.layout.fragment_entrepreneurship, container, false);
         }
     }
@@ -144,10 +154,11 @@ public class Entrepreneurship extends AppCompatActivity {
         @Override
         public Fragment getItem(int position) {
             if (position == 0) {
-
+                return Skill.newInstance("dummy","dummy");
             } else if (position == 1) {
-
+                return EntNotification.newInstance("dummy1","dummy2");
             }
+            return null;
         }
 
         @Override
@@ -155,5 +166,10 @@ public class Entrepreneurship extends AppCompatActivity {
             // Show 3 total pages.
             return 2;
         }
+    }
+
+    public interface OnFragmentInteractionListener {
+        // TODO: Update argument type and name
+        void onFragmentInteraction(Uri uri);
     }
 }
