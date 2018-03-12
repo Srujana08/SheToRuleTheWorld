@@ -13,21 +13,21 @@ import android.widget.TextView;
 import static com.iwh.shetoruletheworld.Constants.flag;
 
 public class FlashScreen extends AppCompatActivity {
+
     public static final String MyPREFERENCES = "MyPREFERENCES" ;
     String ph = "";
     String pwd = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        TextView she, s;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flash_screen);
-        /*tv = (TextView)findViewById(R.id.tv);
-        iv = (ImageView)findViewById(R.id.iv);
-        iv1 = (ImageView)findViewById(R.id.iv1);*/
+        she = (TextView)findViewById(R.id.she);
+        s = (TextView)findViewById(R.id.s);
         //getActionBar().hide();
         Animation myanim = AnimationUtils.loadAnimation(this,R.anim.alpha);
-        /*tv.startAnimation(myanim);
-        iv.startAnimation(myanim);
-        iv1.startAnimation(myanim);*/
+        she.startAnimation(myanim);
+        s.startAnimation(myanim);
         final Intent i = new Intent(this, Signup.class);
         final Intent intent = new Intent(this, EduOrEnt.class);
 

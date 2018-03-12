@@ -1,13 +1,193 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg2"
     tools:context="com.iwh.shetoruletheworld.Class">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
+    
 
-</FrameLayout>
+
+    
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="SELECT A CLASS"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:layout_marginTop="30dp"
+                android:textStyle="bold"
+                android:textColorHighlight="@color/pink"
+                android:shadowColor="@color/pink"
+                android:shadowRadius="20"
+                android:shadowDx="1"
+                android:shadowDy="1"/>
+
+            <LinearLayout
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp">
+
+                <Button
+                    android:id="@+id/class5"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="50dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:background="@color/pink"
+                    android:textColor="#080808"
+                    android:textColorHint="#080808"
+                    android:textSize="20sp"
+
+                    android:text="@string/c5" />
+
+                <Button
+                    android:id="@+id/class6"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="50dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:background="@color/pink"
+                    android:textColor="#080808"
+                    android:textColorHint="#080808"
+                    android:textSize="20sp"
+                    android:text="@string/c6" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+
+
+                <Button
+                    android:id="@+id/class7"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="50dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_weight="1"
+                    android:background="@color/pink"
+                    android:textColor="#080808"
+                    android:textColorHint="#080808"
+                    android:textSize="20sp"
+                    android:text="@string/c7" />
+
+                <Button
+                    android:id="@+id/class8"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="50dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_weight="1"
+                    android:background="@color/pink"
+                    android:textColor="#080808"
+                    android:textColorHint="#080808"
+                    android:textSize="20sp"
+                    android:text="@string/c8" />
+
+            </LinearLayout>
+            <LinearLayout
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+
+                <Button
+                    android:id="@+id/class9"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="50dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:background="@color/pink"
+                    android:textColor="#080808"
+                    android:textColorHint="#080808"
+                    android:textSize="20sp"
+                    android:text="@string/c9" />
+
+                <Button
+                    android:id="@+id/class10"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="50dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:background="@color/pink"
+                    android:textColor="#080808"
+                    android:textColorHint="#080808"
+                    android:textSize="20sp"
+                    android:text="@string/c10" />
+
+            </LinearLayout>
+            <LinearLayout
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+
+                <Button
+                    android:id="@+id/BtnGK"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="50dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_weight="1"
+                    android:background="@color/pink"
+                    android:text="@string/cgk"
+                    android:textColor="#080808"
+                    android:textColorHint="#080808"
+                    android:textSize="20sp"
+                     />
+
+                <Button
+                    android:id="@+id/BtnAC"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="50dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:background="@color/pink"
+                    android:textColor="#080808"
+                    android:textColorHint="#080808"
+                    android:textSize="20sp"
+                    android:text="@string/cac" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

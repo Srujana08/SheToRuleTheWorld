@@ -2,12 +2,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.iwh.shetoruletheworld.EntNotification">
+    android:id="@+id/EntNotificationListFragment"
+    tools:context="com.iwh.shetoruletheworld.EntNotification"
+    android:background="@drawable/bg2">
 
     <!-- TODO: Update blank fragment layout -->
 
     <ListView
         android:id="@+id/EntNotificationList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
+
+        //android:background="@android:color/background_light" />
 </FrameLayout>

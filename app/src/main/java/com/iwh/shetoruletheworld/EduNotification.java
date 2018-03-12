@@ -7,6 +7,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+
+import com.iwh.shetoruletheworld.apiControllers.EduNotificationAPI;
+import com.iwh.shetoruletheworld.apiControllers.EntNotificationAPI;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 
 /**
@@ -28,6 +35,8 @@ public class EduNotification extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+    EduNotificationAdapter ListAdapter;
+    ArrayList<String> Notification_ArrayList = new ArrayList<String>();
 
     public EduNotification() {
         // Required empty public constructor
@@ -64,7 +73,15 @@ public class EduNotification extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_edu_notification, container, false);
+        View view = inflater.inflate(R.layout.fragment_edu_notification, container, false);
+        ListView EduNotificationsList = (ListView)view.findViewById(R.id.EduNotificationList);
+        EduNotificationAPI eduNotificationAPI = new EduNotificationAPI();
+        eduNotificationAPI.doCall();
+        String apiResponse = eduNotificationAPI.response;
+        Notification_ArrayList.addAll(Arrays.asList(apiResponse.split("<br>")));
+        ListAdapter = new EduNotificationAdapter(this.getContext(), Notification_ArrayList);
+        EduNotificationsList.setAdapter(ListAdapter);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

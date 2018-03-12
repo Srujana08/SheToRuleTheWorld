@@ -4,6 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/girl"
     tools:context="com.iwh.shetoruletheworld.FlashScreen">
 
+    <TextView
+        android:id="@+id/she"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/SHE"
+        android:textColor="#cc030303"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.035" />
+    <TextView
+        android:id="@+id/s"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/S"
+        android:textColor="#cc030303"
+        android:textSize="30sp"
+        android:textStyle="bold"
+
+        android:padding="50dp"
+        android:textAlignment="center"/>
 </android.support.constraint.ConstraintLayout>

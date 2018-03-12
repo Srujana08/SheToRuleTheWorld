@@ -1,12 +1,18 @@
 package com.iwh.shetoruletheworld;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.PopupMenu;
+import android.widget.Toast;
 
 
 /**
@@ -64,7 +70,88 @@ public class Class extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_class, container, false);
+        View view =  inflater.inflate(R.layout.fragment_class, container, false);
+        final Button class5 = (Button)view.findViewById(R.id.class5);
+        Button class6 = (Button)view.findViewById(R.id.class6);
+        Button class7 = (Button)view.findViewById(R.id.class7);
+        Button class8 = (Button)view.findViewById(R.id.class8);
+        Button class9 = (Button)view.findViewById(R.id.class9);
+        Button class10 = (Button)view.findViewById(R.id.class10);
+        Button gk = (Button)view.findViewById(R.id.BtnGK);
+        Button ac = (Button)view.findViewById(R.id.BtnAC);
+
+
+        class5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PopupMenu popup = new PopupMenu(Class.super.getContext(), class5);
+                popup.getMenuInflater().inflate(R.menu.subject_popup, popup.getMenu());
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    public boolean onMenuItemClick(MenuItem item) {
+                        //Toast.makeText(MainActivity.this,"You Clicked : " + item.getTitle(),Toast.LENGTH_SHORT).show();
+                        String sub = item.getTitle().toString();
+                        if(sub.equals("Maths")){
+                            Intent i = new Intent("com.iwh.shetoruletheworld.class5Maths");
+                            startActivity(i);
+                        }
+                        else if(sub.equals("Science")){
+                            //Intent i = new Intent(this, class5Science.class);
+                            //startActivity(i);
+                            Toast.makeText(Class.super.getContext(), "Under construction",Toast.LENGTH_SHORT).show();
+                        }else{
+                            //Intent i = new Intent(this, class5English.class);
+                            //startActivity(i);
+                            Toast.makeText(Class.super.getContext(), "Under construction",Toast.LENGTH_SHORT).show();
+                        }
+                        return true;
+                    }
+                });
+                popup.show();//showing popup menu
+            }
+        });
+        class6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Class.super.getContext(), "Under construction",Toast.LENGTH_SHORT).show();
+            }
+        });
+        class7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Class.super.getContext(), "Under construction",Toast.LENGTH_SHORT).show();
+            }
+        });
+        class8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Class.super.getContext(), "Under construction",Toast.LENGTH_SHORT).show();
+            }
+        });
+        class9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Class.super.getContext(), "Under construction",Toast.LENGTH_SHORT).show();
+            }
+        });
+        class10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Class.super.getContext(), "Under construction",Toast.LENGTH_SHORT).show();
+            }
+        });
+        gk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Class.super.getContext(), "Under construction",Toast.LENGTH_SHORT).show();
+            }
+        });
+        ac.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Class.super.getContext(), "Under construction",Toast.LENGTH_SHORT).show();
+            }
+        });
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

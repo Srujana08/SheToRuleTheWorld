@@ -1,10 +1,15 @@
 package com.iwh.shetoruletheworld;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.Uri;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-   
+
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -15,10 +20,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-  
+
 import android.widget.TextView;
 
-public class Education extends AppCompatActivity {
+import static com.iwh.shetoruletheworld.Constants.FRAGMENTS_TAB_OVERRIDE_KEY;
+import static com.iwh.shetoruletheworld.Constants.flag;
+
+public class Education extends AppCompatActivity implements Class.OnFragmentInteractionListener, EduNotification.OnFragmentInteractionListener {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -44,28 +52,44 @@ public class Education extends AppCompatActivity {
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        Bundle intentArgs = this.getIntent().getExtras();
+        intentArgs = intentArgs == null ? new Bundle() : intentArgs;
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        mSectionsPagerAdapter = new Education.SectionsPagerAdapter(getSupportFragmentManager(), intentArgs.get(FRAGMENTS_TAB_OVERRIDE_KEY), tabLayout);
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
 
-      FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-      fab.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View view) {
-              Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                      .setAction("Action", null).show();
-          }
-      });
-      
+        mViewPager.setAdapter(mSectionsPagerAdapter);
+        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            public void onTabSelected(TabLayout.Tab tab) {
+                mViewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+
+
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_education, menu);
+        getMenuInflater().inflate(R.menu.menu_home, menu);
         return true;
     }
 
@@ -75,40 +99,30 @@ public class Education extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        if (id == R.id.logout) {
+            Intent i = new Intent(this, Login.class);
+            startActivity(i);
+            SharedPreferences sharedpreferences = getSharedPreferences(Login.MyPREFERENCES, Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            editor.clear();
+            editor.commit();
+            flag = "";
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
         }
-
-        return super.onOptionsItemSelected(item);
+        if (id == R.id.teach) {
+            Intent i = new Intent(this, Teach.class);
+            startActivity(i);
+        }
+        if (id == R.id.postjob) {
+            Intent i = new Intent(this, PostJob.class);
+            startActivity(i);
+        }
+        return true;
     }
 
-    
-  
+    @Override
+    public void onFragmentInteraction(Uri uri) {
 
-    /**
-     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-     * one of the sections/tabs/pages.
-     */
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
-
-        public SectionsPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
-        }
-
-        @Override
-        public int getCount() {
-            // Show 3 total pages.
-            return 3;
-        }
     }
 
     /**
@@ -120,6 +134,9 @@ public class Education extends AppCompatActivity {
          * fragment.
          */
         private static final String ARG_SECTION_NUMBER = "section_number";
+
+        public PlaceholderFragment() {
+        }
 
         /**
          * Returns a new instance of this fragment for the given section
@@ -133,16 +150,53 @@ public class Education extends AppCompatActivity {
             return fragment;
         }
 
-        public PlaceholderFragment() {
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            return inflater.inflate(R.layout.fragment_education, container, false);
+        }
+    }
+
+    /**
+     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
+     * one of the sections/tabs/pages.
+     */
+    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+
+        private Integer tabOverride = null;
+        private TabLayout tabLayoutM;
+        public SectionsPagerAdapter(FragmentManager fm, Object tabOverride, TabLayout tabLayout) {
+            super(fm);
+            this.tabOverride = tabOverride == null ? null : Integer.parseInt(tabOverride.toString());
+            this.tabLayoutM = tabLayout;
         }
 
         @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_education, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
-            return rootView;
+        public Fragment getItem(int position) {
+            int positionToLoad = this.tabOverride == null ? position : tabOverride;
+            if (position >= this.getCount()) {
+                positionToLoad = 0;
+            }
+            if (position == 0) {
+                return Class.newInstance("dummy","dummy");
+            } else if (positionToLoad == 1) {
+                return EduNotification.newInstance("dummy1","dummy2");
+            }
+            if (this.tabLayoutM != null) {
+                this.tabLayoutM.getTabAt(positionToLoad).select();
+            }
+            return null;
         }
+
+        @Override
+        public int getCount() {
+            // Show 3 total pages.
+            return 2;
+        }
+
+    }
+    public interface OnFragmentInteractionListener {
+        // TODO: Update argument type and name
+        void onFragmentInteraction(Uri uri);
     }
 }

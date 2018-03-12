@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.view.PagerAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -25,6 +26,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static com.iwh.shetoruletheworld.Constants.FRAGMENTS_TAB_OVERRIDE_KEY;
 import static com.iwh.shetoruletheworld.Constants.flag;
 
 public class Entrepreneurship extends AppCompatActivity implements Skill.OnFragmentInteractionListener, EntNotification.OnFragmentInteractionListener {
@@ -53,13 +55,33 @@ public class Entrepreneurship extends AppCompatActivity implements Skill.OnFragm
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        Bundle intentArgs = this.getIntent().getExtras();
+        intentArgs = intentArgs == null ? new Bundle() : intentArgs;
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(),
+                intentArgs.get(FRAGMENTS_TAB_OVERRIDE_KEY), tabLayout);
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        mViewPager.setAdapter(mSectionsPagerAdapter);
+        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            public void onTabSelected(TabLayout.Tab tab) {
+                mViewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
 
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
@@ -130,10 +152,6 @@ public class Entrepreneurship extends AppCompatActivity implements Skill.OnFragm
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            //TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            //textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
-
-            //ImageButton not1 = (ImageButton)getView().findViewById(R.id.not1);
 
             return inflater.inflate(R.layout.fragment_entrepreneurship, container, false);
         }
@@ -147,16 +165,30 @@ public class Entrepreneurship extends AppCompatActivity implements Skill.OnFragm
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        public SectionsPagerAdapter(FragmentManager fm) {
+        private Integer tabOverride = null;
+        private TabLayout tabLayoutM;
+        public SectionsPagerAdapter(FragmentManager fm, Object tabOverride, TabLayout tabLayout) {
             super(fm);
+            this.tabOverride = tabOverride == null ? null : Integer.parseInt(tabOverride.toString());
+            this.tabLayoutM = tabLayout;
         }
 
         @Override
         public Fragment getItem(int position) {
+            int positionToLoad = this.tabOverride == null ? position : tabOverride;
+            if (position >= this.getCount()) {
+                positionToLoad = 0;
+            }
+            // Tab select cheyyataniki ee if-else vaadakuudadhu
             if (position == 0) {
                 return Skill.newInstance("dummy","dummy");
-            } else if (position == 1) {
+            } else if (positionToLoad == 1) {
                 return EntNotification.newInstance("dummy1","dummy2");
+            }
+            if (this.tabLayoutM != null) {
+                // Idhi vaadali
+                //ohhhhhhhhhh
+                this.tabLayoutM.getTabAt(positionToLoad).select();
             }
             return null;
         }

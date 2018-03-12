@@ -5,28 +5,70 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/bg2"
+    android:paddingTop="24dp"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.iwh.shetoruletheworld.PostJob"
     tools:showIn="@layout/activity_post_job">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:text="POST A JOB"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColorHighlight="@color/pink"
+        android:shadowColor="@color/pink"
+        android:shadowRadius="20"
+        android:shadowDx="1"
+        android:shadowDy="1"/>
+
     <Spinner
         android:id="@+id/jobrole"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:entries="@array/jobrole"
+        android:ems="10"
+        android:layout_weight="0.2"
+        android:layout_marginTop="5dp"
+         />
 
     <Spinner
         android:id="@+id/salary"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_weight="0.2"
+        android:entries="@array/location"
+         />
 
     <Spinner
         android:id="@+id/location"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_weight="0.2"
+        android:entries="@array/salary"
+         />
+
 
     <Button
         android:id="@+id/Btnsend"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SEND NOTIFICATION" />
+        android:layout_marginTop="34dp"
+        android:padding="12dp"
+        android:background="@color/pink"
+        android:layout_marginBottom="96dp"
+        android:textSize="20dp"
+        android:textColor="@color/blue"
+        android:text="Submit" />
 </LinearLayout>

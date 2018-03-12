@@ -1,52 +1,63 @@
 <resources>
     <string name="app_name">SHE - To Rule The World</string>
+    <string name="SHE">SHE </string>
+    <string name="S">To Rule The World </string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_login">Login</string>
     <string name="title_activity_edu_or_ent">EduOrEnt</string>
     <string name="title_activity_teach">Teach</string>
     <string name="title_activity_post_job">PostJob</string>
+    <string name="button1">EDUCATION</string>
+    <string name="button2">ENTREPRENEURSHIP</string>
+
 
     <string-array name="jobrole">
-        <item id = "Tailoring">Tailoring</item>
-        <item id = "Quilling">Quilling</item>
-        <item id = "Stitching">Stitching</item>
-        <item id = "Bangle Making">Bangle Making</item>
+        <item id="">Choose role</item>
+        <item id="Tailoring">Tailoring</item>
+        <item id="Quilling">Quilling</item>
+        <item id="Stitching">Stitching</item>
+        <item id="Bangle Making">Bangle Making</item>
     </string-array>
 
     <string-array name="salary">
-        <item id = "1">Less than 1000</item>
-        <item id = "2">1000 - 5000</item>
-        <item id = "3">5000 - 10000</item>
-        <item id = "4">10000 - 15000</item>
-        <item id = "5">15000 - 20000</item>
-        <item id = "6">Above 20000</item>
+        <item id="">Choose salary</item>
+        <item id="1">Less than 1000</item>
+        <item id="2">1000 - 5000</item>
+        <item id="3">5000 - 10000</item>
+        <item id="4">10000 - 15000</item>
+        <item id="5">15000 - 20000</item>
+        <item id="6">Above 20000</item>
     </string-array>
 
     <string-array name="location">
-        <item id = "Hyderabad">Hyderabad</item>
-        <item id = "Bangalore">Bangalore</item>
-        <item id = "Chennai">Chennai</item>
-        <item id = "Delhi">Delhi</item>
+        <item id="">Choose location</item>
+        <item id="Hyderabad">Hyderabad</item>
+        <item id="Bangalore">Bangalore</item>
+        <item id="Chennai">Chennai</item>
+        <item id="Delhi">Delhi</item>
     </string-array>
 
     <string-array name="subject">
-        <item id = "Maths">Maths</item>
-        <item id = "Science">Science</item>
-        <item id = "English">English</item>
+        <item id="">Choose subject</item>
+        <item id="Maths">Maths</item>
+        <item id="Science">Science</item>
+        <item id="English">English</item>
     </string-array>
 
     <string-array name="std">
-        <item id = "5">5</item>
-        <item id = "6">6</item>
-        <item id = "7">7</item>
-        <item id = "8">8</item>
-        <item id = "9">9</item>
-        <item id = "10">10</item>
+        <item id="">Choose class</item>
+        <item id="5">5</item>
+        <item id="6">6</item>
+        <item id="7">7</item>
+        <item id="8">8</item>
+        <item id="9">9</item>
+        <item id="10">10</item>
     </string-array>
 
     <string-array name="teachingmode">
-        <item id = "Skype">Skype</item>
-        <item id = "Youtube">Youtube</item>
+        <item id="">Choose mode of teaching</item>
+        <item id="Skype">Skype</item>
+        <item id="Youtube">Youtube</item>
     </string-array>
     <string name="title_activity_entrepreneurship">Entrepreneurship</string>
     <string name="section_format">Hello World from section: %1$d</string>
@@ -57,6 +68,33 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_tailoring">Tailoring</string>
+    <string name="title_activity_education">Education</string>
+    <string name="title_activity_class5">Class5</string>
+    <string name="title_activity_class6">class6</string>
+
+    <string name="c5">Class 5</string>
+    <string name="c6">Class 6</string>
+    <string name="c7">Class 7</string>
+    <string name="c8">Class 8</string>
+    <string name="c9">Class 9</string>
+    <string name="c10">Class 10</string>
+    <string name="cgk">General Knowledge</string>
+    <string name="cac">Arts and Crafts</string>
+    <string name="title_activity_class5_maths">class5Maths</string>
+
+        <string name="title">Choose for material</string>
+        <string name="h1">https://in.edugain.com/math/grade-5</string>
+        <string name="h2">https://www.khanacademy.org/math/in-fifth-grade-math</string>
+        <string name="h3">http://www.learncbse.in/ncert-solutions-for-class-5-mathematics/</string>
+        <string name="h4">https://www.youtube.com/watch?v=LxTiMOixjQI</string>
+
+    <string name="t1">Read</string>
+    <string name="h11">https://www.allfreesewing.com/Basics-and-Tutorials</string>
+    <string name="h22">http://howtosew.com/</string>
+    <string name="h33">https://crazylittleprojects.com/sewing-for-beginners-learn-to-sew/</string>
+    <string name="h44">http://www.cutterandtailor.com/forum/index.php?showtopic=2130</string>
+    <string name="h55">http://www.womansweekly.com/sewing/how-to-make-a-dress-how-to-cut-fabric-with-a-paper-pattern-19094/
+</string>
 
 
 </resources>

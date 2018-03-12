@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#ff4081</color>
+    <color name="colorPrimary">#FF5C4174</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#ff4081</color>
+    <color name="colorAccent">#FF263B78</color>
+    <color name="login1">#FF8646A6</color>
+    <color name="login">#FFB7C3E6</color>
+    <color name="white">#FFFEFFFF</color>
+    <color name="pink">#FFF7E4F3</color>
+    <color name="black">#FF000000</color>
+    <color name="blue">#FF0B1133</color>
 </resources>

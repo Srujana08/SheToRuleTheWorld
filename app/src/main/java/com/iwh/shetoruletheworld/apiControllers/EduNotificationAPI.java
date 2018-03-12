@@ -6,10 +6,7 @@ import android.annotation.SuppressLint;
  * Created by SrujanaParupudi on 3/6/2018.
  */
 
-public class TeachAPI extends HTTPApiCall {
-    public String subject, strd, tmode, ids, phone, month;
-    public int day,year;
-
+public class EduNotificationAPI extends HTTPApiCall {
     public String response;
 
     @Override
@@ -19,13 +16,14 @@ public class TeachAPI extends HTTPApiCall {
 
     @Override
     public String getURL() {
-        return "http://gvpcse.helplena.co/api/teach.php";
+        return "http://gvpcse.helplena.co/api/eduNotification.php";
     }
 
     @SuppressLint("DefaultLocale")
     @Override
     public String getParameters() {
         // these are wrong..... ans have URLEncoded to string with spaces..
-        return String.format("phone=%s&subject=%s&strd=%s&tmode=%s&ids=%s&day=%d&month=%s&year=%d",phone, subject, strd, tmode, ids, day, month, year);
+        //return String.format("phone=%s&jobrole=%s&salary=%s&location=%s",phone, jobrole, salary, location);
+        return null;
     }
 }

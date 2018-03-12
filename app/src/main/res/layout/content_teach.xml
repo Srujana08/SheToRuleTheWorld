@@ -5,37 +5,72 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/bg2"
+    android:paddingTop="24dp"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.iwh.shetoruletheworld.Teach"
     tools:showIn="@layout/activity_teach">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:text="SPREAD KNOWLEDGE"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColorHighlight="@color/pink"
+        android:shadowColor="@color/pink"
+        android:shadowRadius="20"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        />
     <Spinner
         android:id="@+id/subject"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
+        android:entries="@array/subject"
+        android:ems="10"
+        android:layout_weight="0.2"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="20dp"
         tools:layout_editor_absoluteY="25dp" />
 
     <Spinner
         android:id="@+id/std"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:entries="@array/std"
+        android:ems="10"
+        android:layout_weight="0.2"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="20dp"
+
         />
 
     <Spinner
         android:id="@+id/teachingmode"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:entries="@array/teachingmode"
+        android:ems="10"
+        android:layout_weight="0.2"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="20dp"
+        />
 
     <DatePicker
         android:id="@+id/date"
         android:layout_width="match_parent"
-        android:layout_height="94dp" />
-
-    <TimePicker
-        android:id="@+id/time"
-        android:layout_width="match_parent"
-        android:layout_height="98dp" />
+        android:layout_height="94dp"
+        android:layout_marginBottom="20dp"/>
 
     <EditText
         android:id="@+id/ids"
@@ -49,5 +84,22 @@
         android:id="@+id/Btnsend"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:layout_marginBottom="20dp"
+        android:padding="12dp"
+        android:background="@color/pink"
+        android:textSize="20dp"
+        android:textColor="@color/blue"
         android:text="Send Notification" />
+    <!--<Button
+        android:id="@+id/Btnsend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:padding="12dp"
+        android:background="@color/pink"
+        android:layout_marginBottom="96dp"
+        android:textSize="20dp"
+        android:textColor="@color/blue"
+        android:text="Submit" />-->
 </LinearLayout>

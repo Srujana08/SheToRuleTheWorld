@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.iwh.shetoruletheworld.apiControllers.LoginAPI;
@@ -40,7 +41,7 @@ public class Login extends AppCompatActivity {
         setSupportActionBar(toolbar);
         final EditText Phone = (EditText)findViewById(R.id.Phone);
         final EditText Password = (EditText)findViewById(R.id.Password);
-        Button BtnSignup = (Button)findViewById(R.id.BtnSignup);
+        TextView BtnSignup = (TextView) findViewById(R.id.BtnSignup);
         Button BtnLogin = (Button)findViewById(R.id.BtnLogin);
 
 

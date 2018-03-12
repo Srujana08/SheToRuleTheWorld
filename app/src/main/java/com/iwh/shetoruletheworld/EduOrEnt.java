@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import static com.iwh.shetoruletheworld.Constants.flag;
@@ -23,13 +24,14 @@ public class EduOrEnt extends AppCompatActivity {
         setContentView(R.layout.activity_edu_or_ent);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        ImageButton edu = (ImageButton)findViewById(R.id.education);
-        ImageButton ent  = (ImageButton)findViewById(R.id.entrepreneurship);
+        Button edu = (Button)findViewById(R.id.education);
+        Button ent  = (Button)findViewById(R.id.entrepreneurship);
+        final Intent intent = new Intent(this, Education.class);
         final Intent i = new Intent(this, Entrepreneurship.class);
         edu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(intent);
             }
         });
         ent.setOnClickListener(new View.OnClickListener() {

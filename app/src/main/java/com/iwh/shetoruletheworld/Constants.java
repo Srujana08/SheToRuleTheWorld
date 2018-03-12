@@ -9,4 +9,5 @@ public class Constants {
     public static final String INVALID_CREDS = "Invalid credentials";
     public static String flag = "";
 
+    public static final String FRAGMENTS_TAB_OVERRIDE_KEY = "fragmentTabOverrideKey";
 }

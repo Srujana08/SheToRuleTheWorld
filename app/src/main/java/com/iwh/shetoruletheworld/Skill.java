@@ -1,17 +1,24 @@
 package com.iwh.shetoruletheworld;
 
+import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.view.MenuItem;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 
 /**
@@ -77,6 +84,9 @@ public class Skill extends Fragment  {
         ImageButton tailoring = (ImageButton)view.findViewById(R.id.tailoring);
         ImageButton quilling = (ImageButton)view.findViewById(R.id.quilling);
         ImageButton banglemaking = (ImageButton)view.findViewById(R.id.banglemaking);
+        ImageButton handicrafts = (ImageButton)view.findViewById(R.id.handicrafts);
+        ImageButton cooking = (ImageButton)view.findViewById(R.id.cooking);
+        ImageButton embroidery = (ImageButton)view.findViewById(R.id.embroidery);
 
         tailoring.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,17 +98,38 @@ public class Skill extends Fragment  {
         quilling.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent("com.iwh.shetoruletheworld.Tailoring");
-                startActivity(i);
+                Toast.makeText(Skill.super.getContext(), "Under construction",Toast.LENGTH_SHORT).show();
             }
         });
         banglemaking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent("com.iwh.shetoruletheworld.Tailoring");
-                startActivity(i);
+                Toast.makeText(Skill.super.getContext(), "Under construction",Toast.LENGTH_SHORT).show();
+
             }
         });
+        handicrafts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Skill.super.getContext(), "Under construction",Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        cooking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Skill.super.getContext(), "Under construction",Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        embroidery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Skill.super.getContext(), "Under construction",Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
         return  view;
     }
 

@@ -1,35 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/bg2"
+    android:paddingTop="24dp"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.iwh.shetoruletheworld.EduOrEnt"
     tools:showIn="@layout/activity_edu_or_ent">
 
-    <ImageButton
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:text="SELECT CATEGORY"
+        android:textAlignment="center"
+        android:textSize="24sp"
+
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:textColorHighlight="@color/pink"
+        android:shadowColor="@color/pink"
+        android:shadowRadius="20"
+        android:shadowDx="1"
+        android:shadowDy="1"/>
+
+
+
+    <Button
         android:id="@+id/education"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher" />
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:background="@color/pink"
+        android:drawableLeft="@drawable/edu"
+        android:text="@string/button1"
+        android:padding="5dp"
+        android:textColorHint="#fff"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:ems="10"
+        android:layout_weight="0.2"/>
 
-    <TextView
-        android:id="@+id/edutext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="EDUCATION" />
-
-    <ImageButton
+    <Button
         android:id="@+id/entrepreneurship"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher" />
-
-    <TextView
-        android:id="@+id/enttext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ENTREPRENEURSHIP" />
-</LinearLayout>
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/education"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@color/pink"
+        android:drawableLeft="@drawable/entre"
+        android:padding="5dp"
+        android:text="@string/button2"
+        android:textColorHint="#fff"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:ems="10"
+        android:layout_weight="0.2"/>
+</RelativeLayout>

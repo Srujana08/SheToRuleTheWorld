@@ -1,35 +1,194 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/skillFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.iwh.shetoruletheworld.Skill">
+    android:fillViewport="true"
+    android:scrollbarSize="5dp"
+    android:scrollbars="vertical"
+    android:fadeScrollbars="false"
+    android:background="@drawable/bg2">
 
-    <!-- TODO: Update blank fragment layout -->
 
-
-    <ImageButton
-        android:id="@+id/quilling"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:contentDescription="Quilling"
-        android:src="@mipmap/ic_launcher" />
+        android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/banglemaking"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="SELECT A SKILL"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:layout_marginTop="30dp"
+            android:textStyle="bold"
+            android:textColorHighlight="@color/pink"
+            android:shadowColor="@color/pink"
+            android:shadowRadius="20"
+            android:shadowDx="1"
+            android:shadowDy="1"/>
 
-        android:contentDescription="Bangle Making"
-        android:src="@mipmap/ic_launcher" />
 
 
-    <ImageButton
-        android:id="@+id/tailoring"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="Tailoring"
-        android:src="@mipmap/ic_launcher" />
-</FrameLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/tailoring"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="20dp"
+                android:padding="10dp"
+                android:contentDescription="Tailoring"
+                android:src="@drawable/tailoring" />
+            <ImageButton
+                android:id="@+id/quilling"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:contentDescription="Quilling"
+                android:layout_toLeftOf="@id/tailoring"
+                android:layout_toStartOf="@id/tailoring"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity= "center"
+                android:src="@drawable/quilling" />
+
+            <TextView
+                android:id="@id/t1"
+                android:layout_width="96dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/t3"
+                android:layout_alignStart="@+id/t3"
+                android:layout_below="@+id/tailoring"
+                android:text="Tailoring"
+                android:textSize="18sp"
+                android:textColor="@color/pink"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@id/t2"
+                android:layout_width="96dp"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/quilling"
+                android:layout_alignRight="@+id/quilling"
+                android:layout_below="@+id/quilling"
+                android:layout_marginEnd="28dp"
+                android:layout_marginRight="28dp"
+                android:text="Quilling"
+                android:textSize="18sp"
+                android:textColor="@color/pink"
+                android:textStyle="bold"/>
+
+            <ImageButton
+                android:id="@+id/embroidery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="20dp"
+                android:padding="10dp"
+                android:layout_below="@+id/t1"
+                android:contentDescription="Embroidery"
+                android:src="@drawable/embroidery" />
+            <ImageButton
+                android:id="@+id/banglemaking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:contentDescription="Bangle Making"
+                android:layout_toLeftOf="@id/embroidery"
+                android:layout_toStartOf="@id/embroidery"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/t2"
+                android:layout_gravity= "center"
+                android:src="@drawable/bangle" />
+            <TextView
+                android:id="@+id/t3"
+                android:layout_width="96dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="28dp"
+                android:layout_marginRight="28dp"
+                android:layout_below="@+id/embroidery"
+                android:layout_alignEnd="@+id/embroidery"
+                android:layout_alignRight="@+id/embroidery"
+                android:text="Embroidery"
+                android:textSize="18sp"
+                android:textColor="@color/pink"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@id/t4"
+                android:layout_width="96dp"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/t2"
+                android:layout_alignLeft="@+id/banglemaking"
+                android:layout_alignRight="@+id/t2"
+                android:layout_alignStart="@+id/banglemaking"
+                android:layout_below="@+id/banglemaking"
+                android:layout_marginLeft="14dp"
+                android:layout_marginStart="14dp"
+                android:text="Bangle Making"
+                android:textSize="18sp"
+                android:textColor="@color/pink"
+                android:textStyle="bold"/>
+
+            <ImageButton
+                android:id="@+id/handicrafts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/embroidery"
+                android:layout_alignStart="@+id/embroidery"
+                android:layout_alignTop="@+id/cooking"
+                android:contentDescription="Handicrafts"
+                android:padding="10dp"
+                android:src="@drawable/handicrafts" />
+
+            <ImageButton
+                android:id="@+id/cooking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/t4"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_toLeftOf="@id/embroidery"
+                android:layout_toStartOf="@id/embroidery"
+                android:contentDescription="Cooking"
+                android:padding="10dp"
+                android:src="@drawable/food" />
+
+            <TextView
+                android:id="@+id/t5"
+                android:layout_width="96dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/t3"
+                android:layout_alignParentBottom="true"
+                android:layout_alignStart="@+id/t3"
+                android:text="Handicrafts"
+                android:textSize="18sp"
+                android:textColor="@color/pink"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/t6"
+                android:layout_width="96dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="28dp"
+                android:layout_marginRight="28dp"
+                android:layout_below="@+id/cooking"
+                android:layout_alignEnd="@+id/cooking"
+                android:layout_alignRight="@+id/cooking"
+                android:text="Cooking"
+                android:textSize="18sp"
+                android:textColor="@color/pink"
+                android:textStyle="bold"/>
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>
